@@ -1,0 +1,15 @@
+:root {
+  --primary: #2cbeda;
+  --hover: rgba(44, 190, 218, 0.1);
+  --active: rgba(44, 190, 218, 0.2);
+  --background: #201d2b;
+  --card: #252836;
+  --text: #c8c8c8;
+  --error: #ff2f00;
+  --disabled: #afafaf;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--color);
+}
