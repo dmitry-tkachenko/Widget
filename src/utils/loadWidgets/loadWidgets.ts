@@ -7,12 +7,12 @@ import { IWidgetsUrlData } from '../../utils/runWidgetsInSequence/runWidgetsInSe
 export const loadWidgetUrlData = (): Promise<IWidgetsUrlData[]> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() > 0.5) {
+      if (Math.random() > 0.1) {
         return resolve(widgetsUrlData);
       } else {
         return reject(new Error('Somethink went wrong while loading widget url data'))
       }
-    }, 1000);
+    }, 500);
   });
 };
 

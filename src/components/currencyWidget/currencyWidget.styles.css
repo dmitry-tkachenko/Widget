@@ -1,0 +1,23 @@
+.currencyWidget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  gap: 20px;
+  padding: 10px;
+  background-color: var(--card);
+}
+
+.currencyWidget__table {
+  width: 100%;
+}
+
+.currencyWidget__tr {
+  border-bottom: 1px solid var(--disabled);
+}
+
+.currencyWidget__td {
+  text-align: center;
+  padding: 0 20px;
+}

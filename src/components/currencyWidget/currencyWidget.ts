@@ -1,3 +1,4 @@
+import './currencyWidget.styles.css';
 import { buttonTemplate } from "../button/button.template";
 import { spinerTemplate } from "../spiner/spiner.template";
 import { getCurrencyDto } from "./api/apiCurrency";
@@ -27,10 +28,11 @@ export const currencyWidget = async (url: string) => {
 
   const weatherWidgetContainer = document.createElement('article');
   weatherWidgetContainer.classList.add('widget');
+  weatherWidgetContainer.id = 'currencyWidget';
   
   app.appendChild(weatherWidgetContainer);
 
-  const widget = document.querySelector('.widget')
+  const widget = document.getElementById('currencyWidget')
   if (!widget) return;
 
   await getCurrencyContent(widget, url);

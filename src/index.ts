@@ -1,5 +1,5 @@
 import './styles/styles.css';
 
-const a = document.querySelector('h1');
+import { loadWidgets } from './utils/loadWidgets/loadWidgets';
 
-if (a) a.style.color = 'red'
+loadWidgets();
