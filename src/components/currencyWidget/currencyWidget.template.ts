@@ -1,4 +1,4 @@
-import { ICurrencyDto } from "./api/apiCurrency.interface";
+import { ICurrencyDto } from "./currencyWidget.interface";
 
 const getColor = (pctChange: number) => {
   return pctChange < 0 ? 'colorGreen' : 'colorRed';
