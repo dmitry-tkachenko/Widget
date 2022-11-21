@@ -1,15 +1,20 @@
 import { buttonTemplate } from "../../components/button/button.template";
 import { spinerTemplate } from "../../components/spiner/spiner.template";
+import { IWidgetConfig } from "./widget.interface";
 
 export class Widget<T> {
   id: string;
+  selector: string;
+  classList: string[];
   url: string | null = null;
   widget: HTMLElement | null = null;
-  contetntTemplate: (data: T) => string;
+  contentTemplate: (data: T) => string | string[];
 
-  constructor (config: any) {
+  constructor (config: IWidgetConfig<T>) {
     this.id = config.id;
-    this.contetntTemplate = config.contentTemplate
+    this.contentTemplate = config.contentTemplate
+    this.classList = config.classList
+    this.selector = config.selector
   };
 
   async init(url: string) {
@@ -19,8 +24,8 @@ export class Widget<T> {
   };
 
   private createWidget() {
-    const widget = document.createElement('article');
-    widget.classList.add('widget');
+    const widget = document.createElement(this.selector);
+    widget.classList.add(...this.classList);
     widget.id = this.id;
     document.getElementById('app')?.appendChild(widget);
 
@@ -43,9 +48,9 @@ export class Widget<T> {
     try {
       this.widget.innerHTML = spinerTemplate();
       const response = await this.fetchData(this.url);
-      const dto: T = await response.json();
+      const data: T = await response.json();
 
-      this.widget.innerHTML = this.contetntTemplate(dto);
+      this.widget.innerHTML = this.getTemplate(data);
     } catch {
       this.errorHandler();
     };
@@ -56,10 +61,22 @@ export class Widget<T> {
 
     const reloadButtonId = `${this.id}Reload`;
 
-    this.widget.innerHTML = buttonTemplate(reloadButtonId, 'Reload');
+    this.widget.innerHTML = `
+      <div class="centerContainer">
+        ${buttonTemplate(reloadButtonId, 'Reload')}
+      </div>
+    `;
 
     document.getElementById(reloadButtonId)?.addEventListener('click', () => {
       this.setContent();
     });
   };
+
+  private getTemplate(data: T) {
+    const template = this.contentTemplate(data);
+
+    if (typeof template === 'string') return template
+
+    return template.join('');
+  }
 };

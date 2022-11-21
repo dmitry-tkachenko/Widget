@@ -1,13 +1,17 @@
 import { IWidgetsUrlData } from "./utils/runWidgetsInSequence/runWidgetsInSequence.interface";
 
 export const widgetsUrlData: IWidgetsUrlData[] = [
-  {
-    title: 'defaultWidget',
-    url: 'widget',
-  },
+  // {
+  //   title: 'defaultWidget',
+  //   url: 'widget',
+  // },
   {
     title: 'currencyWidget',
     url: 'https://economia.awesomeapi.com.br/json/last/USD-UAH,EUR-UAH,BTC-USD',
+  },
+  {
+    title: 'newsWidget',
+    url: 'https://inshorts.deta.dev/news?category=science',
   },
   {
     title: 'weatherWidget',

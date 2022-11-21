@@ -1,0 +1,12 @@
+.newsWidget {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  grid-area: newsWidget;
+  width: 350px;
+  height: 100vh;
+  background-color: var(--card);
+  overflow: scroll;
+  color: var(--text)
+}

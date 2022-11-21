@@ -5,6 +5,8 @@ import { ICurrencyDto } from './currencyWidget.interface';
 
 export const currencyWidget = new Widget<ICurrencyDto>({
   id: 'currencyWidget',
+  selector: 'article',
+  classList: ['currencyWidget'],
   contentTemplate: currencyWidgetTemplate,
 });
 

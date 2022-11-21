@@ -1,0 +1,11 @@
+.weatherWidget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  grid-area: weatherWidget;
+  width: max-content;
+  padding: 10px;
+  background-color: var(--card);
+}

@@ -13,14 +13,19 @@
   height: 100vh;
 }
 
-.colorDisabled {
-  color: var(--disabled);
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.colorGreen {
-  color: green;
-}
-
-.colorRed {
-  color: var(--error);;
+.app {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  grid-template-rows: 1fr 350px;
+  grid-template-areas: 
+    "currencyWidget newsWidget"
+    "weatherWidget newsWidget";
 }
