@@ -5,8 +5,8 @@
   justify-content: center;
   gap: 20px;
   grid-area: currencyWidget;
-  width: max-content;
-  height: max-content;
+  width: 450px;
+  height: 230px;
   padding: 10px;
   background-color: var(--card);
 }
